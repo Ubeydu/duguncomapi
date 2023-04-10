@@ -16,6 +16,11 @@ class Product(models.Model):
     guncelleme_tarihi = models.DateTimeField(auto_now=True)
     fiyat = MoneyField(max_digits=10, decimal_places=2, default_currency='TRY')
 
+    def __str__(self):
+        return self.isim
+
+
+        
     
     
 
