@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'products',
     'djmoney',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Adding DjangoFilterBackend class so that we can filter results when sending requests
+# to our API while using Postman
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 
 # Internationalization
