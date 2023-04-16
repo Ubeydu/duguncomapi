@@ -6,6 +6,7 @@ from djmoney.money import Money
 from djmoney.models.validators import MinMoneyValidator
 from money import Money
 from decimal import Decimal
+from dj_rql.filter_cls import AutoRQLFilterClass
 
 AVAILABLE_STATUS = (
     ("Aktif","Aktif"),
@@ -26,7 +27,9 @@ class Product(models.Model):
         return self.isim
 
 
-        
+class ProductFilters(AutoRQLFilterClass):
+    MODEL = Product
+
     
     
 
